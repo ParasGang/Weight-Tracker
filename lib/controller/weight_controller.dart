@@ -61,7 +61,7 @@ class LocalDatabase {
   SharedPreferences? _sharedPreferences;
   Future<List<String>?> getValue() async {
     _sharedPreferences = await SharedPreferences.getInstance();
-    return _sharedPreferences!.getStringList('weight');
+    return _sharedPreferences!.getStringList('weight') ?? [];
   }
 
   void setValue(List<String> weightList) async {
